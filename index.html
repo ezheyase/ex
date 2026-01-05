@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devoir Surveillé : Physique-Chimie</title>
+    <style>
+        :root {
+            --primary-color: #000000;
+            --text-color: #111111;
+            --bg-color: #ffffff;
+        }
+
+        body {
+            font-family: 'Times New Roman', serif;
+            line-height: 1.4;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            border: 2px solid #000;
+            padding: 40px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px double #000;
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            text-transform: uppercase;
+            font-size: 22px;
+            margin: 5px 0;
+        }
+
+        .sub-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        .part-title {
+            background-color: #000;
+            color: #fff;
+            padding: 5px 10px;
+            font-weight: bold;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        h3 {
+            text-decoration: underline;
+            margin-bottom: 10px;
+        }
+
+        .data-box {
+            background-color: #f0f0f0;
+            border: 1px solid #000;
+            padding: 8px;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+        }
+
+        /* Diagram Styles */
+        .diagram-row {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            margin: 15px 0;
+            border: 1px dashed #999;
+            padding: 10px;
+        }
+        .diagram-label {
+            text-align: center;
+            font-size: 0.85em;
+            margin-top: 5px;
+            font-weight: bold;
+        }
+
+        ol { margin-left: 20px; padding-left: 0; }
+        li { margin-bottom: 8px; }
+        .points { float: right; font-weight: bold; font-size: 0.9em; }
+        .dotted { display: inline-block; border-bottom: 1px dotted #000; width: 100%; height: 1.5em; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div style="font-size: 0.9em; text-transform: uppercase;">Royaume du Maroc - Ministère de l'Éducation Nationale</div>
+        <h1>Devoir Surveillé N°1</h1>
+        <div class="sub-header">
+            <span>Matière : Physique-Chimie</span>
+            <span>Durée : 2 Heures</span>
+            <span>Note : ______ / 20</span>
+        </div>
+    </header>
+
+    <div class="part-title">Partie I : Chimie (7 points)</div>
+
+    <h3>Exercice 1 : Structure de l'atome (4 pts)</h3>
+    <div class="data-box">
+        Le magnésium (Mg) est un atome dont le numéro atomique est <strong>Z = 12</strong>.
+    </div>
+    <ol>
+        <li>Donner la configuration électronique de l'atome de magnésium. <span class="points">(1 pt)</span>
+            <span class="dotted"></span>
+        </li>
+        <li>Déterminer la couche externe (couche de valence). <span class="points">(0.5 pt)</span>
+            <span class="dotted"></span>
+        </li>
+        <li>En déduire sa position dans le tableau périodique réduit (Ligne et Colonne). <span class="points">(1.5 pts)</span>
+            <span class="dotted"></span>
+        </li>
+        <li>Cet atome a tendance à perdre 2 électrons. Écrire le symbole de l'ion formé et sa structure électronique. <span class="points">(1 pt)</span>
+            <span class="dotted"></span>
+        </li>
+    </ol>
+
+    <h3>Exercice 2 : Classification Périodique (3 pts)</h3>
+    <div class="data-box">
+        Un élément chimique <strong>X</strong> se trouve dans la <strong>3<sup>ème</sup> période</strong> et la <strong>4<sup>ème</sup> colonne</strong> du tableau périodique simplifié.
+    </div>
+    <ol>
+        <li>En déduire la structure électronique de l'atome de l'élément X. <span class="points">(1.5 pts)</span>
+            <span class="dotted"></span>
+        </li>
+        <li>Déterminer le numéro atomique <strong>Z</strong> de cet élément ainsi que son nom (parmi : C, Si, Al, Cl). <span class="points">(1.5 pts)</span>
+            <span class="dotted"></span>
+        </li>
+    </ol>
+
+    <div class="part-title">Partie II : Physique (13 points)</div>
+
+    <h3>Exercice 1 : Étude d'un ressort et Poussée d'Archimède (7 pts)</h3>
+    <div class="data-box">
+        <strong>Données :</strong> g = 9,8 N.kg<sup>-1</sup> ; Raideur K = 20 N.m<sup>-1</sup> ; Longueur à vide l<sub>0</sub> = 6,1 cm.
+    </div>
+    
+    <div class="diagram-row">
+        <div>
+            <svg width="40" height="140">
+                <line x1="10" y1="10" x2="30" y2="10" stroke="black" stroke-width="2"/>
+                <path d="M20,10 q-10,5 0,10 q10,5 0,10 q-10,5 0,10 q10,5 0,10 q-10,5 0,10 q10,5 0,10" fill="none" stroke="black"/>
+                <text x="5" y="80" font-size="10">l0</text>
+            </svg>
+            <div class="diagram-label">Schéma 0</div>
+        </div>
+        <div>
+            <svg width="40" height="140">
+                <line x1="10" y1="10" x2="30" y2="10" stroke="black" stroke-width="2"/>
+                <path d="M20,10 v10 q-10,5 0,10 q10,5 0,10 q-10,5 0,10 q10,5 0,10 q-10,5 0,10 q10,5 0,10 v10" fill="none" stroke="black"/>
+                <rect x="10" y="90" width="20" height="20" fill="#ddd" stroke="black"/>
+                <text x="15" y="105" font-size="10">S</text>
+            </svg>
+            <div class="diagram-label">Schéma 1</div>
+        </div>
+        <div>
+            <svg width="60" height="140">
+                <line x1="20" y1="10" x2="40" y2="10" stroke="black" stroke-width="2"/>
+                <path d="M30,10 v5 q-10,5 0,10 q10,5 0,10 q-10,5 0,10 q10,5 0,10 q-10,5 0,10 v5" fill="none" stroke="black"/>
+                <rect x="10" y="70" width="40" height="40" fill="#e0f7fa" stroke="black"/> <line x1="10" y1="75" x2="50" y2="75" stroke="blue" stroke-dasharray="2"/> <rect x="20" y="80" width="20" height="20" fill="#ddd" stroke="black"/> </svg>
+            <div class="diagram-label">Schéma 2</div>
+        </div>
+    </div>
+
+    <strong>Partie A : Dans l'air</strong><br>
+    On suspend le solide S (masse m). Longueur finale <strong>l<sub>1</sub> = 11,0 cm</strong>.
+    <ol>
+        <li>Faire le bilan des forces exercées sur S et les représenter sur le schéma 1. <span class="points">(1.5 pts)</span></li>
+        <li>À l'équilibre, exprimer la masse <strong>m</strong> en fonction de K, l<sub>1</sub>, l<sub>0</sub> et g. <span class="points">(1.5 pts)</span>
+            <span class="dotted"></span>
+        </li>
+        <li>Calculer la valeur de la masse <strong>m</strong>. <span class="points">(1 pt)</span>
+            <span class="dotted"></span>
+        </li>
+    </ol>
+
+    <strong>Partie B : Dans l'eau</strong><br>
+    Le solide est immergé. Nouvelle longueur <strong>l<sub>2</sub> = 9,2 cm</strong>.
+    <ol start="4">
+        <li>Représenter les forces sur le schéma 2 (dont la Poussée d'Archimède). <span class="points">(1 pt)</span></li>
+        <li>Montrer que l'intensité de la poussée d'Archimède est <strong>F<sub>a</sub> = K(l<sub>1</sub> - l<sub>2</sub>)</strong> et calculer sa valeur. <span class="points">(2 pts)</span>
+            <span class="dotted"></span>
+        </li>
+    </ol>
+
+    <h3>Exercice 2 : Équilibre d'un cube (6 pts)</h3>
+    <div class="data-box">
+        Un cube d'arête a = 4,77 cm est suspendu à un ressort de raideur <strong>K = 50 N.m<sup>-1</sup></strong>.
+    </div>
+
+    <div class="diagram-row">
+        <div>
+            <svg width="60" height="120">
+                <line x1="10" y1="10" x2="50" y2="10" stroke="black" stroke-width="2"/>
+                <path d="M30,10 v80" fill="none" stroke="black" stroke-dasharray="2"/>
+                <path d="M30,10 q-15,10 0,20 q15,10 0,20 q-15,10 0,20" fill="none" stroke="black"/>
+                <rect x="20" y="70" width="20" height="20" fill="#999" stroke="black"/>
+                <text x="45" y="50" font-size="10">ΔL1</text>
+            </svg>
+            <div class="diagram-label">Fig (a)</div>
+        </div>
+        <div>
+            <svg width="80" height="120">
+                <line x1="20" y1="10" x2="60" y2="10" stroke="black" stroke-width="2"/>
+                <path d="M40,10 q-15,8 0,16 q15,8 0,16 q-15,8 0,16" fill="none" stroke="black"/>
+                <rect x="15" y="55" width="50" height="50" fill="#e0f7fa" stroke="black"/>
+                <rect x="30" y="60" width="20" height="20" fill="#999" stroke="black"/>
+                <text x="55" y="40" font-size="10">ΔL2</text>
+            </svg>
+            <div class="diagram-label">Fig (b)</div>
+        </div>
+    </div>
+
+    <ol>
+        <li>Dans l'air (fig a), l'allongement est <strong>ΔL<sub>1</sub> = 10 cm</strong>. Déterminer la masse m du cube (on prendra g=10 N/kg). <span class="points">(2 pts)</span>
+            <span class="dotted"></span>
+        </li>
+        <li>Dans un liquide (fig b), l'allongement devient <strong>ΔL<sub>2</sub> = 8 cm</strong>. Faire le bilan des forces. <span class="points">(2 pts)</span>
+            <span class="dotted"></span>
+        </li>
+        <li>Calculer l'intensité de la Poussée d'Archimède F<sub>a</sub>. <span class="points">(2 pts)</span>
+            <span class="dotted"></span>
+        </li>
+    </ol>
+
+</div>
+
+</body>
+</html>
