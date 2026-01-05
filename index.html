@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Devoir Surveillé : Physique-Chimie (Chronométré)</title>
+    <title>Devoir Surveillé : Physique-Chimie</title>
     <style>
         :root {
             --primary-color: #000000;
@@ -35,19 +35,22 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.3);
             z-index: 1000;
             border: 2px solid #000;
+            transition: background-color 0.3s;
         }
         
         .timer-warning {
-            background-color: #d32f2f !important;
-            animation: blink 1s infinite;
+            background-color: #b71c1c !important; /* Dark Red */
+            animation: pulse 1s infinite;
         }
 
-        @keyframes blink {
-            50% { opacity: 0.7; }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
 
         @media print {
-            #timer-display { display: none; } /* Hide timer when printing */
+            #timer-display { display: none; }
         }
 
         /* EXAM STYLES */
@@ -131,8 +134,13 @@
 <body>
 
 <div id="timer-display">
-    Temps restant: <span id="time">02:00:00</span>
+    Temps restant: <span id="time">00:30:00</span>
 </div>
+
+<audio id="vecna-sound" preload="auto">
+    <source src="https://actions.google.com/sounds/v1/horror/horror_bell.ogg" type="audio/ogg">
+    Your browser does not support the audio element.
+</audio>
 
 <div class="container">
     <header>
@@ -142,7 +150,7 @@
         <div class="sub-header">
             <span>Matière : Physique-Chimie</span>
             <span>Niveau : Tronc Commun</span>
-            <span>Durée : 2 Heures</span>
+            <span>Durée : 30 Minutes</span>
             <span>Note : ______ / 20</span>
         </div>
     </header>
@@ -282,10 +290,20 @@
 </div>
 
 <script>
-    // TIMER SCRIPT (2 Hours)
-    let totalTime = 2 * 60 * 60; // 2 hours in seconds
+    // TIMER SCRIPT (30 Minutes)
+    let totalTime = 30 * 60; // 1800 seconds
+    
     const timerDisplay = document.getElementById('time');
     const timerBox = document.getElementById('timer-display');
+    const audio = document.getElementById('vecna-sound');
+    let soundPlayed = false;
+
+    // Helper: Unlock audio context on user interaction (Click anywhere on page)
+    document.body.addEventListener('click', function() {
+        if(audio.paused) {
+            audio.load(); 
+        }
+    }, {once:true});
 
     function updateTimer() {
         let hours = Math.floor(totalTime / 3600);
@@ -299,16 +317,30 @@
 
         timerDisplay.textContent = `${hours}:${minutes}:${seconds}`;
 
-        // Warning when less than 5 minutes remain
-        if (totalTime < 300 && totalTime > 0) {
-            timerBox.style.backgroundColor = '#c62828';
+        // TRIGGER SOUND AT 24 SECONDS REMAINING
+        if (totalTime === 24 && !soundPlayed) {
+            // Attempt to play sound
+            audio.play().then(() => {
+                console.log("Audio playing (24s left)");
+            }).catch(error => {
+                console.log("Audio playback blocked by browser unless user interacted:", error);
+                // Fallback visual alert if audio fails
+                timerBox.style.backgroundColor = 'red';
+            });
+            soundPlayed = true;
+        }
+
+        // Visual Warning when less than 2 minutes remain
+        if (totalTime < 120 && totalTime > 0) {
+            timerBox.style.backgroundColor = '#b71c1c'; // Dark Red
         }
 
         if (totalTime <= 0) {
             clearInterval(interval);
             timerBox.classList.add('timer-warning');
-            timerDisplay.textContent = "00:00:00 - TEMPS ÉCOULÉ";
-            alert("Le temps est écoulé ! Posez vos stylos.");
+            timerDisplay.textContent = "00:00:00 - FIN";
+            // Alert the user slightly after the clock stops
+            setTimeout(() => alert("Le temps est écoulé !"), 100);
         } else {
             totalTime--;
         }
