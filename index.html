@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Devoir Surveillé : Physique-Chimie</title>
+    <title>Devoir Surveillé : Physique-Chimie (2 Minutes)</title>
     <style>
         :root {
             --primary-color: #000000;
@@ -134,7 +134,7 @@
 <body>
 
 <div id="timer-display">
-    Temps restant: <span id="time">00:05:00</span>
+    Temps restant: <span id="time">00:02:00</span>
 </div>
 
 <audio id="vecna-sound" preload="auto">
@@ -150,7 +150,7 @@
         <div class="sub-header">
             <span>Matière : Physique-Chimie</span>
             <span>Niveau : Tronc Commun</span>
-            <span>Durée : 30 Minutes</span>
+            <span>Durée : 02 Minutes</span>
             <span>Note : ______ / 20</span>
         </div>
     </header>
@@ -290,15 +290,15 @@
 </div>
 
 <script>
-    // TIMER SCRIPT (30 Minutes)
-    let totalTime = 30 * 60; // 1800 seconds
+    // TIMER SCRIPT (2 Minutes)
+    let totalTime = 2 * 60; // 120 seconds
     
     const timerDisplay = document.getElementById('time');
     const timerBox = document.getElementById('timer-display');
     const audio = document.getElementById('vecna-sound');
     let soundPlayed = false;
 
-    // Helper: Unlock audio context on user interaction (Click anywhere on page)
+    // Helper: Unlock audio context on user interaction
     document.body.addEventListener('click', function() {
         if(audio.paused) {
             audio.load(); 
@@ -319,19 +319,15 @@
 
         // TRIGGER SOUND AT 24 SECONDS REMAINING
         if (totalTime === 24 && !soundPlayed) {
-            // Attempt to play sound
-            audio.play().then(() => {
-                console.log("Audio playing (24s left)");
-            }).catch(error => {
-                console.log("Audio playback blocked by browser unless user interacted:", error);
-                // Fallback visual alert if audio fails
+            audio.play().catch(error => {
+                console.log("Audio playback failed:", error);
                 timerBox.style.backgroundColor = 'red';
             });
             soundPlayed = true;
         }
 
-        // Visual Warning when less than 2 minutes remain
-        if (totalTime < 120 && totalTime > 0) {
+        // Visual Warning when less than 30 seconds remain
+        if (totalTime < 30 && totalTime > 0) {
             timerBox.style.backgroundColor = '#b71c1c'; // Dark Red
         }
 
@@ -339,7 +335,6 @@
             clearInterval(interval);
             timerBox.classList.add('timer-warning');
             timerDisplay.textContent = "00:00:00 - FIN";
-            // Alert the user slightly after the clock stops
             setTimeout(() => alert("Le temps est écoulé !"), 100);
         } else {
             totalTime--;
