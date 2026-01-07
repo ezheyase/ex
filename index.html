@@ -3,24 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Devoir Surveillé : Physique-Chimie (2 Minutes)</title>
+    <title>Devoir à Domicile N°3 - Variante 2</title>
+    
+    <script>
+      window.MathJax = {
+        tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
     <style>
-        :root {
-            --primary-color: #000000;
-            --text-color: #111111;
-            --bg-color: #ffffff;
-        }
-
-        body {
-            font-family: 'Times New Roman', serif;
-            line-height: 1.4;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            margin: 0;
-            padding: 40px;
-        }
-
-        /* TIMER STYLES */
+        body { font-family: 'Times New Roman', serif; padding: 40px; max-width: 800px; margin: 0 auto; line-height: 1.5; }
+        
+        /* TIMER STYLE */
         #timer-display {
             position: fixed;
             top: 20px;
@@ -35,274 +30,82 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.3);
             z-index: 1000;
             border: 2px solid #000;
-            transition: background-color 0.3s;
         }
-        
-        .timer-warning {
-            background-color: #b71c1c !important; /* Dark Red */
-            animation: pulse 1s infinite;
-        }
+        .timer-warning { background-color: #b71c1c !important; animation: pulse 1s infinite; }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+        @media print { #timer-display { display: none; } }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        @media print {
-            #timer-display { display: none; }
-        }
-
-        /* EXAM STYLES */
-        .container {
-            max-width: 850px;
-            margin: 0 auto;
-            border: 2px solid #000;
-            padding: 40px;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 30px;
-            border-bottom: 3px double #000;
-            padding-bottom: 20px;
-        }
-
-        h1 {
-            text-transform: uppercase;
-            font-size: 24px;
-            margin: 5px 0;
-            letter-spacing: 1px;
-        }
-
-        .sub-header {
-            display: flex;
-            justify-content: space-between;
-            font-weight: bold;
-            font-style: italic;
-            margin-top: 20px;
-            border-top: 1px solid #000;
-            padding-top: 10px;
-        }
-
-        .part-title {
-            background-color: #000;
-            color: #fff;
-            padding: 5px 10px;
-            font-weight: bold;
-            margin-top: 30px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-
-        h3 {
-            text-decoration: underline;
-            margin-bottom: 10px;
-        }
-
-        .data-box {
-            background-color: #f9f9f9;
-            border: 1px solid #000;
-            padding: 8px;
-            margin-bottom: 15px;
-            font-size: 0.9em;
-            font-style: italic;
-        }
-
-        .diagram-row {
-            display: flex;
-            justify-content: space-around;
-            align-items: flex-end;
-            margin: 15px 0;
-            border: 1px dashed #999;
-            padding: 10px;
-            background: #fff;
-        }
-        .diagram-label {
-            text-align: center;
-            font-size: 0.85em;
-            margin-top: 5px;
-            font-weight: bold;
-        }
-
-        ol { margin-left: 20px; padding-left: 0; }
-        li { margin-bottom: 10px; }
-        .points { float: right; font-weight: bold; font-size: 0.9em; }
-        .dotted { display: inline-block; border-bottom: 1px dotted #000; width: 100%; height: 1.5em; vertical-align: bottom;}
+        .header-table { width: 100%; border-collapse: collapse; margin-bottom: 30px; text-align: center; border: 2px solid black; }
+        .header-table td { border: 1px solid black; padding: 10px; font-weight: bold; }
+        h3 { text-decoration: underline; text-align: center; margin-top: 30px; }
+        ol { margin-left: 20px; }
+        li { margin-bottom: 12px; }
     </style>
 </head>
 <body>
 
 <div id="timer-display">
-    Temps restant: <span id="time">00:02:00</span>
+    Temps restant: <span id="time">02:00:00</span>
 </div>
 
 <audio id="vecna-sound" preload="auto">
     <source src="https://actions.google.com/sounds/v1/horror/horror_bell.ogg" type="audio/ogg">
-    Your browser does not support the audio element.
 </audio>
 
-<div class="container">
-    <header>
-        <div style="font-size: 0.9em; text-transform: uppercase;">Royaume du Maroc - Ministère de l'Éducation Nationale</div>
-        
-        <h1>Devoir Surveillé N°1</h1>
-        <div class="sub-header">
-            <span>Matière : Physique-Chimie</span>
-            <span>Niveau : Tronc Commun</span>
-            <span>Durée : 02 Minutes</span>
-            <span>Note : ______ / 20</span>
-        </div>
-    </header>
+<table class="header-table">
+    <tr>
+        <td>Prof : Kawtar Elmo<br>Niveau : T C S F</td>
+        <td>Devoir à domicile<br>N° 3</td>
+        <td>Lycée ALMAJED<br>Année Scolaire : 2025/2026</td>
+    </tr>
+</table>
 
-    <div class="part-title">Partie I : Chimie (7 points)</div>
+<h3>Exercice 1</h3>
 
-    <h3>Exercice 1 : Structure de l'atome (4 pts)</h3>
-    <div class="data-box">
-        Le magnésium (Mg) est un atome dont le numéro atomique est <strong>Z = 12</strong>.
-    </div>
-    <ol>
-        <li>Donner la configuration électronique de l'atome de magnésium. <span class="points">(1 pt)</span>
-            <span class="dotted"></span>
-        </li>
-        <li>Déterminer la couche externe (couche de valence). <span class="points">(0.5 pt)</span>
-            <span class="dotted"></span>
-        </li>
-        <li>En déduire sa position dans le tableau périodique réduit (Ligne et Colonne). <span class="points">(1.5 pts)</span>
-            <span class="dotted"></span>
-        </li>
-        <li>Cet atome a tendance à perdre 2 électrons. Écrire le symbole de l'ion formé et sa structure électronique. <span class="points">(1 pt)</span>
-            <span class="dotted"></span>
-        </li>
-    </ol>
+<p>On considère le polynôme suivant : $p(x) = x^3 - 6x^2 + 11x - 6$</p>
 
-    <h3>Exercice 2 : Classification Périodique (3 pts)</h3>
-    <div class="data-box">
-        Un élément chimique <strong>X</strong> se trouve dans la <strong>3<sup>ème</sup> période</strong> et la <strong>4<sup>ème</sup> colonne</strong> du tableau périodique simplifié.
-    </div>
-    <ol>
-        <li>En déduire la structure électronique de l'atome de l'élément X. <span class="points">(1.5 pts)</span>
-            <span class="dotted"></span>
-        </li>
-        <li>Déterminer le numéro atomique <strong>Z</strong> de cet élément ainsi que son nom (parmi : C, Si, Al, Cl). <span class="points">(1.5 pts)</span>
-            <span class="dotted"></span>
-        </li>
-    </ol>
+<ol>
+    <li>Montrer que $x = 1$ est une racine de $p(x)$.</li>
+    <li>Déterminer par la division euclidienne le polynôme $Q(x)$ tel que :<br>
+        $$p(x) = (x - 1)Q(x)$$</li>
+    <li>Résoudre dans $\mathbb{R}$ l'équation : $Q(x) = 0$.</li>
+    <li>
+        a) Factoriser dans $\mathbb{R}$ le polynôme suivant $Q(x)$.<br>
+        b) Déduire une factorisation de $p(x)$ sous forme des binômes du 1er degré.
+    </li>
+    <li>
+        a) Donner le tableau de signe du polynôme $p(x)$.<br>
+        b) Déduire l'ensemble des solutions de l'inéquation $p(x) \leq 0$.
+    </li>
+    <li>Résoudre par la méthode de « Cramer » le système suivant :
+        $$
+        \begin{cases} 
+        5x + 3y = 13 \\
+        2x - 3y = 1
+        \end{cases}
+        $$
+    </li>
+</ol>
 
-    <div class="part-title">Partie II : Physique (13 points)</div>
+<h3>Exercice 2</h3>
 
-    <h3>Exercice 1 : Étude d'un ressort et Poussée d'Archimède (7 pts)</h3>
-    <div class="data-box">
-        <strong>Données :</strong> Intensité de pesanteur g = 9,8 N.kg<sup>-1</sup> ; Raideur K = 20 N.m<sup>-1</sup> ; Longueur à vide l<sub>0</sub> = 6,1 cm.
-    </div>
-    
-    <div class="diagram-row">
-        <div>
-            <svg width="40" height="140">
-                <line x1="10" y1="10" x2="30" y2="10" stroke="black" stroke-width="2"/>
-                <path d="M20,10 q-10,5 0,10 q10,5 0,10 q-10,5 0,10 q10,5 0,10 q-10,5 0,10 q10,5 0,10" fill="none" stroke="black"/>
-                <text x="5" y="80" font-size="10">l0</text>
-            </svg>
-            <div class="diagram-label">Schéma 0</div>
-        </div>
-        <div>
-            <svg width="40" height="140">
-                <line x1="10" y1="10" x2="30" y2="10" stroke="black" stroke-width="2"/>
-                <path d="M20,10 v10 q-10,5 0,10 q10,5 0,10 q-10,5 0,10 q10,5 0,10 q-10,5 0,10 q10,5 0,10 v10" fill="none" stroke="black"/>
-                <rect x="10" y="90" width="20" height="20" fill="#ddd" stroke="black"/>
-                <text x="15" y="105" font-size="10">S</text>
-            </svg>
-            <div class="diagram-label">Schéma 1</div>
-        </div>
-        <div>
-            <svg width="60" height="140">
-                <line x1="20" y1="10" x2="40" y2="10" stroke="black" stroke-width="2"/>
-                <path d="M30,10 v5 q-10,5 0,10 q10,5 0,10 q-10,5 0,10 q10,5 0,10 q-10,5 0,10 v5" fill="none" stroke="black"/>
-                <rect x="10" y="70" width="40" height="40" fill="#e0f7fa" stroke="black"/> 
-                <line x1="10" y1="75" x2="50" y2="75" stroke="blue" stroke-dasharray="2"/>
-                <rect x="20" y="80" width="20" height="20" fill="#ddd" stroke="black"/>
-            </svg>
-            <div class="diagram-label">Schéma 2</div>
-        </div>
-    </div>
-
-    <strong>Partie A : Dans l'air</strong><br>
-    On suspend le solide S de masse m. La longueur finale est <strong>l<sub>1</sub> = 11,0 cm</strong>.
-    <ol>
-        <li>Faire le bilan des forces exercées sur S et les représenter sur le schéma 1. <span class="points">(1.5 pts)</span></li>
-        <li>À l'équilibre, exprimer la masse <strong>m</strong> en fonction de K, l<sub>1</sub>, l<sub>0</sub> et g. <span class="points">(1.5 pts)</span>
-            <span class="dotted"></span>
-        </li>
-        <li>Calculer la valeur de la masse <strong>m</strong>. <span class="points">(1 pt)</span>
-            <span class="dotted"></span>
-        </li>
-    </ol>
-
-    <strong>Partie B : Dans l'eau</strong><br>
-    Le solide est immergé dans l'eau. La nouvelle longueur est <strong>l<sub>2</sub> = 9,2 cm</strong>.
-    <ol start="4">
-        <li>Représenter les forces sur le schéma 2 (sans oublier la Poussée d'Archimède). <span class="points">(1 pt)</span></li>
-        <li>Montrer que l'intensité de la poussée d'Archimède est <strong>F<sub>a</sub> = K(l<sub>1</sub> - l<sub>2</sub>)</strong> et calculer sa valeur. <span class="points">(2 pts)</span>
-            <span class="dotted"></span>
-        </li>
-    </ol>
-
-    <h3>Exercice 2 : Équilibre d'un cube (6 pts)</h3>
-    <div class="data-box">
-        Un cube d'arête a = 4,77 cm est suspendu à un ressort de raideur <strong>K = 50 N.m<sup>-1</sup></strong>.
-    </div>
-
-    <div class="diagram-row">
-        <div>
-            <svg width="60" height="120">
-                <line x1="10" y1="10" x2="50" y2="10" stroke="black" stroke-width="2"/>
-                <path d="M30,10 v80" fill="none" stroke="black" stroke-dasharray="2"/>
-                <path d="M30,10 q-15,10 0,20 q15,10 0,20 q-15,10 0,20" fill="none" stroke="black"/>
-                <rect x="20" y="70" width="20" height="20" fill="#999" stroke="black"/>
-                <text x="45" y="50" font-size="10">ΔL1</text>
-            </svg>
-            <div class="diagram-label">Fig (a) : Dans l'air</div>
-        </div>
-        <div>
-            <svg width="80" height="120">
-                <line x1="20" y1="10" x2="60" y2="10" stroke="black" stroke-width="2"/>
-                <path d="M40,10 q-15,8 0,16 q15,8 0,16 q-15,8 0,16" fill="none" stroke="black"/>
-                <rect x="15" y="55" width="50" height="50" fill="#e0f7fa" stroke="black"/>
-                <rect x="30" y="60" width="20" height="20" fill="#999" stroke="black"/>
-                <text x="55" y="40" font-size="10">ΔL2</text>
-            </svg>
-            <div class="diagram-label">Fig (b) : Dans un liquide</div>
-        </div>
-    </div>
-
-    <ol>
-        <li>Dans l'air (fig a), l'allongement est <strong>ΔL<sub>1</sub> = 10 cm</strong>. En étudiant l'équilibre, déterminer la masse m du cube (on prendra g=10 N/kg pour cet exercice). <span class="points">(2 pts)</span>
-            <span class="dotted"></span>
-        </li>
-        <li>Dans un liquide (fig b), l'allongement devient <strong>ΔL<sub>2</sub> = 8 cm</strong>. Faire le bilan des forces et les représenter. <span class="points">(2 pts)</span>
-            <span class="dotted"></span>
-        </li>
-        <li>Déterminer l'intensité de la Poussée d'Archimède F<sub>a</sub>. <span class="points">(2 pts)</span>
-            <span class="dotted"></span>
-        </li>
-    </ol>
-
-</div>
+<ol>
+    <li>Déterminer l'abscisse curviligne principale des points suivants : $A\left(\frac{100\pi}{3}\right)$ et $B\left(-\frac{53\pi}{6}\right)$ et $C\left(\frac{25\pi}{4}\right)$.</li>
+    <li>Placer les points A, B, et C sur le cercle trigonométrique.</li>
+</ol>
 
 <script>
-    // TIMER SCRIPT (2 Minutes)
-    let totalTime = 2 * 60; // 120 seconds
+    // TIMER SCRIPT (2 HOURS)
+    let totalTime = 2 * 60 * 60; // 7200 seconds
     
     const timerDisplay = document.getElementById('time');
     const timerBox = document.getElementById('timer-display');
     const audio = document.getElementById('vecna-sound');
     let soundPlayed = false;
 
-    // Helper: Unlock audio context on user interaction
+    // Helper: Unlock audio on first click
     document.body.addEventListener('click', function() {
-        if(audio.paused) {
-            audio.load(); 
-        }
+        if(audio.paused) { audio.load(); }
     }, {once:true});
 
     function updateTimer() {
@@ -310,39 +113,29 @@
         let minutes = Math.floor((totalTime % 3600) / 60);
         let seconds = totalTime % 60;
 
-        // Add leading zeros
         hours = hours < 10 ? '0' + hours : hours;
         minutes = minutes < 10 ? '0' + minutes : minutes;
         seconds = seconds < 10 ? '0' + seconds : seconds;
 
         timerDisplay.textContent = `${hours}:${minutes}:${seconds}`;
 
-        // TRIGGER SOUND AT 24 SECONDS REMAINING
+        // PLAY SOUND AT 24 SECONDS REMAINING
         if (totalTime === 24 && !soundPlayed) {
-            audio.play().catch(error => {
-                console.log("Audio playback failed:", error);
-                timerBox.style.backgroundColor = 'red';
-            });
+            audio.play().catch(e => console.log("Audio blocked:", e));
+            timerBox.style.backgroundColor = '#b71c1c'; // Red Alert
             soundPlayed = true;
-        }
-
-        // Visual Warning when less than 30 seconds remain
-        if (totalTime < 30 && totalTime > 0) {
-            timerBox.style.backgroundColor = '#b71c1c'; // Dark Red
         }
 
         if (totalTime <= 0) {
             clearInterval(interval);
-            timerBox.classList.add('timer-warning');
             timerDisplay.textContent = "00:00:00 - FIN";
-            setTimeout(() => alert("Le temps est écoulé !"), 100);
+            alert("Le temps est écoulé !");
         } else {
             totalTime--;
         }
     }
-
     const interval = setInterval(updateTimer, 1000);
-    updateTimer(); // Initial call
+    updateTimer();
 </script>
 
 </body>
